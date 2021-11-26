@@ -1,6 +1,5 @@
 package com.peerislands.assessment.calcApp.constants;
 
-import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -10,7 +9,7 @@ public class CalcLogger{
     private static FileHandler fileHandler;
     private static SimpleFormatter simpleFormatter;
      
-    private static final String filename = "./ApplicationLog.log";
+    private static final String filename = "./application.log";
      
     private static final int count= 1;
      
@@ -27,11 +26,9 @@ public class CalcLogger{
             fileHandler.setFormatter(simpleFormatter);
              
             logger.addHandler(fileHandler);
-        } catch (SecurityException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        } 
  
         return logger;
     }
